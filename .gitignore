@@ -1,0 +1,14 @@
+build/
+cmake-build-*/
+Debug/
+.settings/
+.cproject
+.mxproject
+.project
+
+*.o
+*.d
+*.elf
+*.hex
+*.bin
+*.map
