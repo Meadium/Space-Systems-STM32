@@ -10,7 +10,8 @@
 #define BIT_0_TIME		32U
 #define BIT_1_TIME		64U
 
-#define RESET_LEN		40U //40*1,25mi s = 50 mi s stan niski = reset
+//40*1,25mi s = 50 mi s stan niski = reset
+#define RESET_LEN		40U 
 #define LED_N			5U
 
 static uint32_t led_buffer[RESET_LEN + 24 * LED_N]; // buffer do wysłania zawierający 8 bitów * 3 kolory * liczba diód + bity do resetu
