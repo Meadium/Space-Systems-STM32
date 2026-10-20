@@ -104,14 +104,14 @@ static void uart_receive_start(void) // Rozpoczyna odbiór danych przez UART
 	  }
 }
 
-static void uart_process_rx_buffer(void) // Obsługuje dane z bufora, zapobiega utracie danych
+static void uart_process_rx_buffer(void) // Obsługuje dane z bufora
 {
     while (uart_rx_tail != uart_rx_head) // Jeżeli w buforze znajduje się nieobsłużony element
     {
         uint16_t tail = uart_rx_tail;
         uint8_t byte = uart_rx_buffer[tail]; // Bierzemy najstarszy element
 
-        uart_rx_tail = (tail + 1U) & UART_RX_BUFFER_MASK; // Przesuwamy tail o 1 i zapetlamy za pomocą maski
+        uart_rx_tail = (tail + 1U) & UART_RX_BUFFER_MASK; // Przesuwamy tail o 1 i zapetlamy za pomocą maski (jeżeli tail + 1 = 256 to uart_rx_tail = 0)
 
 
         tlv_feed(&tlv, byte);
