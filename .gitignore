@@ -2,9 +2,7 @@ build/
 cmake-build-*/
 Debug/
 .settings/
-.cproject
-.mxproject
-.project
+
 
 *.o
 *.d
